@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi Esposa Amada</title>
+    <!-- Importamos fuentes bonitas y de íconos -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* ESTILOS GENERALES */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            color: #5a2a2a;
+            overflow-x: hidden;
+            text-align: center;
+        }
+
+        h1, h2 {
+            font-family: 'Dancing Script', cursive;
+            color: #d63384;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* SECCIÓN DE BIENVENIDA */
+        .header {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 50px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+        }
+
+        /* BOTÓN INTERACTIVO */
+        button {
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-family: 'Quicksand', sans-serif;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 64, 129, 0.4);
+        }
+
+        #mensaje-sorpresa {
+            font-size: 1.5em;
+            color: #c2185b;
+            min-height: 60px;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+        /* SECCIONES TEMÁTICAS */
+        .grid-section {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        @media(min-width: 600px) {
+            .grid-section {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-large {
+            font-size: 3em;
+            color: #ff80ab;
+            margin-bottom: 15px;
+        }
+
+        /* IMÁGENES DE GATITOS */
+        .kitten-gallery img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* SECCIÓN CATÓLICA */
+        .faith-section {
+            background: #fff0f5;
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 30px;
+            border: 2px dashed #ff80ab;
+        }
+
+        .bible-verse {
+            font-style: italic;
+            font-size: 1.2em;
+        }
+
+        /* ANIMACIÓN DE CORAZONES */
+        .heart {
+            position: fixed;
+            top: -1vh;
+            transform: translateY(0);
+            font-size: 2rem;
+            opacity: 0.8;
+            animation: fall linear forwards;
+            z-index: 1;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(105vh);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Fondo de corazones generado por JS -->
+    <div id="hearts-container"></div>
+
+    <div class="container">
+        
+        <!-- ENCABEZADO -->
+        <div class="header">
+            <h1>Para el amor de mi vida</h1>
+            <p>Tú haces que mi mundo tenga música y color.</p>
+            <button onclick="mostrarMensaje()">¡Pulsa aquí para una sorpresa!</button>
+            <div id="mensaje-sorpresa"></div>
+        </div>
+
+        <!-- SECCIÓN MÚSICA -->
+        <div class="grid-section">
+            <div class="card">
+                <i class="fas fa-guitar icon-large"></i>
+                <h2>Nuestra Melodía</h2>
+                <p>Como una guitarra, tocas las notas perfectas en mi corazón.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-microphone-alt icon-large"></i>
+                <h2>Tu Voz</h2>
+                <p>Escucharte es mi canción favorita en todo el mundo.</p>
+            </div>
+        </div>
+
+        <!-- SECCIÓN GATITOS -->
+        <div class="card" style="margin-top: 30px;">
+            <h2>Miau miau (Te amo)</h2>
+            <div class="kitten-gallery">
+                <!-- Imágenes aleatorias de gatitos -->
+                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Gatito lindo">
+            </div>
+            <p>Tan tierno como estos gatitos, así es mi amor por ti.</p>
+        </div>
+
+        <!-- SECCIÓN ESPIRITUAL -->
+        <div class="faith-section">
+            <i class="fas fa-cross icon-large" style="color: #6a1b9a;"></i>
+            <h2>Unidos en la Fe</h2>
+            <p class="bible-verse">"El amor es paciente, es bondadoso. El amor no es envidioso ni jactancioso ni orgulloso. No se comporta con rudeza, no es egoísta, no se enoja fácilmente, no guarda rencor."</p>
+            <p><strong>- 1 Corintios 13:4-5</strong></p>
+            <p>Doy gracias a Dios cada día por ponerte en mi camino.</p>
+        </div>
+
+        <footer style="margin-top: 50px; padding-bottom: 20px; font-size: 0.9em;">
+            Hecho con todo mi ❤️ para ti.
+        </footer>
+
+    </div>
+
+    <script>
+        // MENSAJES DE AMOR
+        const mensajes = [
+            "Eres mi bendición más grande.",
+            "Tu sonrisa ilumina mis días más oscuros.",
+            "Gracias por ser mi compañera de vida.",
+            "Te amo más que ayer, pero menos que mañana.",
+            "Contigo, cada día es una canción hermosa.",
+            "Dios sabía lo que hacía cuando nos unió.",
+            "Eres la dueña de mi corazón y de mis suspiros."
+        ];
+
+        function mostrarMensaje() {
+            const indice = Math.floor(Math.random() * mensajes.length);
+            const elemento = document.getElementById("mensaje-sorpresa");
+            elemento.style.opacity = 0;
+            setTimeout(() => {
+                elemento.innerText = mensajes[indice];
+                elemento.style.opacity = 1;
+            }, 200);
+        }
+
+        // ANIMACIÓN DE CORAZONES CAYENDO
+        function crearCorazon() {
+            const corazon = document.createElement('div');
+            corazon.classList.add('heart');
+            corazon.innerText = Math.random() > 0.5 ? '❤️' : '💖'; // Variedad de corazones
+            
+            // Posición aleatoria horizontal
+            corazon.style.left = Math.random() * 100 + 'vw';
+            
+            // Tamaño aleatorio
+            corazon.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            
+            // Duración aleatoria de la caída
+            corazon.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            
+            document.body.appendChild(corazon);
+
+            // Eliminar el corazón después de que termine la animación
+            setTimeout(() => {
+                corazon.remove();
+            }, 5000);
+        }
+
+        // Crear un corazón cada 300ms
+        setInterval(crearCorazon, 300);
+
+    </script>
+</body>
+</html>
